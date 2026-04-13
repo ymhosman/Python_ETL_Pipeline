@@ -1,0 +1,17 @@
+restaurant_code,restaurant_name,category,chain,own_driver,delivery_fee,adv_delivery_time,location
+R100,,Mexican,No,Yes,50,40,Maadi
+R101,,Grills,No,Yes,25,60,New Cairo
+R102,,Shawerma,No,Yes,40,20,New Cairo
+R103,,Burgers,Yes,Yes,30,25,New Cairo
+R104,,Pizza,No,Yes,75,40,New Cairo
+R105,,Sushi,Yes,Yes,75,70,New Cairo
+R106,,,No,Yes,30,30,New Cairo
+R107,,Vegan,No,Yes,40,25,New Cairo
+R108,,Burgers,Yes,Yes,30,30,New Cairo
+R109,,Grills,Yes,Yes,50,50,New Cairo
+R110,,Shawerma,No,Yes,25,15,Mokattam
+R111,,Italian,No,Yes,40,50,Maadi
+R112,,Pizza,No,Yes,40,30,New Cairo
+R113,,Pizza,Yes,Yes,40,35,Nasr City
+R114,,Mexican,No,Yes,60,45,Maadi
+R115,,Koshary,Yes,Yes,20,15,Heliopolis

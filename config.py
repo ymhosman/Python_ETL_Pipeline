@@ -1,0 +1,6 @@
+INPUT_FILE = "data_input/order_details.csv"
+REF_FILE = "data_input/restaurant_details.csv"
+OUTPUT_CLEAN = "data_output/orders_cleaned.csv"
+OUTPUT_REJECT = "data_output/orders_rejected.csv"
+DB_CONNECTION = "sqlite:///etl.db"
+TABLE_NAME = "processed_data"
