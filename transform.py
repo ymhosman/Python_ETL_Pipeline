@@ -3,7 +3,7 @@ import numpy as np
 
 db_clean = pd.DataFrame()
 db_rejected = pd.DataFrame()
-def transform(orders_raw, ref_raw):
+def transform(orders_raw: pd.DataFrame, ref_raw: pd.DataFrame):
     # Transform
     # Clean null customer ratings to default to 2.5 (half of max 5)
     orders_raw['customer_rating'] = orders_raw['customer_rating'].fillna(2.5)
@@ -38,14 +38,14 @@ def transform(orders_raw, ref_raw):
             reasons.append('INVALID ORDER PRICE')
         #Hard error 2: quantity of food items 0 or less
         if row['quantity'] <= 0:
-            reasons.append('INVALID QUANTITY')
+            reasons.append('INVALID ITEM QUANTITY')
         
         return ','.join(reasons)
 
     db['reject_reason'] = db.apply(reject_reason, axis=1)
     return db
 
-def reject(db):
+def reject(db: pd.DataFrame):
     # Reject rows
     db_rejected = db[db['reject_reason'] != '']
     db_clean = db[db['reject_reason'] == '']
@@ -53,3 +53,17 @@ def reject(db):
     db_rejected = db_rejected.drop(columns=['time_to_deliver', 'discount_applied', 'own_driver', 'adv_delivery_time'])
     db_clean = db_clean.drop(columns=['order_price', 'time_to_deliver', 'discount_applied', 'own_driver', 'adv_delivery_time', 'reject_reason'])
     return db_clean, db_rejected
+
+def aggregate(db: pd.DataFrame):
+    aggregated_data = db['restaurant_code']
+    aggregated_data = db.groupby('restaurant_code', as_index = False).agg({
+        'total_price': 'sum',
+        'customer_rating': 'mean',
+        'quantity': 'sum',
+        'sale_id': 'count',
+        'delivered_on_time': lambda x: (x == 'Yes').sum()
+        })
+    aggregated_data['delivered_on_time'] = aggregated_data['delivered_on_time']/aggregated_data['sale_id'] * 100
+    
+
+    return aggregated_data

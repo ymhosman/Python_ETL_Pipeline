@@ -1,6 +1,7 @@
 from extract import extract_from_csv
 from transform import transform
 from transform import reject
+from transform import aggregate
 from load import load_to_csv
 import pandas as pd
 import logging
@@ -23,9 +24,12 @@ def run_pipeline():
     db_clean, db_rejected = reject(db)
     logging.info("Transform stage complete")
 
+    aggregated_data = aggregate(db_clean)
+
     # Load
     load_to_csv(db_clean, config.OUTPUT_CLEAN)
     load_to_csv(db_rejected, config.OUTPUT_REJECT)
+    load_to_csv(aggregated_data, config.OUTPUT_AGG)
     logging.info("Data saved to .csv")
 
 if __name__ == "__main__":
