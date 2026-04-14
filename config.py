@@ -1,5 +1,7 @@
 INPUT_FILE = "data_input/order_details.csv"
 REF_FILE = "data_input/restaurant_details.csv"
 BASE_OUTPUT = "data_output"
-DB_CONNECTION = "sqlite:///etl.db"
+USER = "username"
+PASS = "password"
+URL = "sqlite:///etl.db"
 TABLE_NAME = "processed_data"
