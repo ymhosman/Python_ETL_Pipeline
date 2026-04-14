@@ -31,6 +31,14 @@ The project consists of 1 main module (`main.py`) and 4 sub-modules: `extract.py
 | WRN‑01 | `order_price > 3000` | `"High price alert; "` |
 | WRN‑02 | `category == null` or `"Unknown"` | `"Missing restuarant reference"` |
 
+Orders with field restaurant_code not corresponding to a restaurant_reference entry are flagged as mentioned in WRN-02, however they also undergo cleaning to set default values for certain other fields which would normally be derived from a matched restaurant_reference entry.
+
+| Field | Default Value |
+|---------------|----------|
+| own_driver | Yes |
+| delivery_fee | 35 |
+| adv_delivery_time | 40 |
+
 ## Aggregation
 
 The `clean_flow` is aggregated by `restaurant_code` to produce a summary dataset.
