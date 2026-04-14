@@ -1,3 +1,3 @@
-sale_id,restaurant_code,quantity,order_price,sale_date,customer_rating,restaurant_name,category,chain,delivery_fee,location,delivered_on_time,total_price,data_quality_flag,reject_reason
-6,R105,3,-20.5,1/20/2025,1.3,,Sushi,Yes,75,New Cairo,Yes,54.5,OK,INVALID ORDER PRICE
-11,R110,-3,280.67,1/25/2025,1.2,,Shawerma,No,25,Mokattam,No,305.67,OK,INVALID ITEM QUANTITY
+sale_id,restaurant_code,quantity,order_price,sale_date,customer_rating,discount_applied,time_to_deliver,restaurant_name,category,chain,own_driver,delivery_fee,adv_delivery_time,location,delivered_on_time,total_price,data_quality_flag,reject_reason
+6,R105,3,-20.5,1/20/2025,1.3,0,46,,Sushi,No,1.0,75.0,70.0,Heliopolis,Yes,54.5,OK,INVALID ORDER PRICE
+11,R110,-3,280.67,1/25/2025,1.2,0,23,,Unknown,,0.0,40.0,40.0,,Yes,280.67,MISSING RESTAURANT REFERENCE,INVALID ITEM QUANTITY

@@ -1,15 +1,15 @@
 sale_id,restaurant_code,quantity,sale_date,customer_rating,restaurant_name,category,chain,delivery_fee,location,delivered_on_time,total_price,data_quality_flag
-1,R109,2,1/15/2025,2.5,,Grills,Yes,50,New Cairo,Yes,400.45,OK
-2,R100,3,1/16/2025,2.4,,Mexican,No,50,Maadi,No,330.67,OK
-3,R102,12,1/17/2025,4.2,,Shawerma,No,40,New Cairo,No,5320.67,HIGH PRICE ALERT
-4,R103,5,1/18/2025,3.7,,Burgers,Yes,30,New Cairo,Yes,310.67,OK
-5,R104,7,1/19/2025,2.6,,Pizza,No,75,New Cairo,Yes,420.66,OK
-7,R106,5,1/21/2025,2.9,,Unknown,No,30,New Cairo,Yes,3110.67,"HIGH PRICE ALERT,UNKNOWN RESTAURANT CATEGORY"
-8,R107,5,1/22/2025,4.6,,Vegan,No,40,New Cairo,No,1790.52,OK
-9,R108,7,1/23/2025,3.8,,Burgers,Yes,30,New Cairo,No,1463.45,OK
-10,R101,8,1/24/2025,2.7,,Grills,No,25,New Cairo,No,924.63,OK
-12,R101,6,1/26/2025,2.5,,Grills,No,25,New Cairo,Yes,810.99,OK
-13,R104,2,1/27/2025,4.7,,Pizza,No,75,New Cairo,Yes,355.67,OK
-14,R113,7,1/28/2025,3.6,,Pizza,Yes,40,Nasr City,Yes,1643.45,OK
-15,R103,2,1/29/2025,3.1,,Burgers,Yes,30,New Cairo,No,310.67,OK
-16,R107,8,1/30/2025,2.2,,Vegan,No,40,New Cairo,No,2154.5,OK
+1,R106,2,1/15/2025,2.5,,Unknown,,40.0,,Yes,350.45,MISSING RESTAURANT REFERENCE
+2,R100,3,1/16/2025,2.4,,Burgers,No,50.0,Maadi,No,280.67,OK
+3,R102,12,1/17/2025,4.2,,Shawerma,Yes,40.0,New Cairo,No,5320.67,HIGH PRICE ALERT
+4,R103,5,1/18/2025,3.7,,Burgers,Yes,30.0,New Cairo,Yes,310.67,OK
+5,R104,7,1/19/2025,2.6,,Pizza,No,75.0,New Cairo,Yes,420.66,OK
+7,R103,5,1/21/2025,2.9,,Burgers,Yes,30.0,New Cairo,Yes,3110.67,HIGH PRICE ALERT
+8,R107,5,1/22/2025,4.6,,Unknown,,40.0,,No,1750.52,MISSING RESTAURANT REFERENCE
+9,R102,7,1/23/2025,3.8,,Shawerma,Yes,40.0,New Cairo,No,1473.45,OK
+10,R101,8,1/24/2025,2.7,,Grills,No,25.0,New Cairo,No,899.63,OK
+12,R101,6,1/26/2025,2.5,,Grills,No,25.0,New Cairo,Yes,785.99,OK
+13,R104,2,1/27/2025,4.7,,Pizza,No,75.0,New Cairo,Yes,355.67,OK
+14,R101,7,1/28/2025,3.6,,Grills,No,25.0,New Cairo,Yes,1603.45,OK
+15,R103,2,1/29/2025,3.1,,Burgers,Yes,30.0,New Cairo,No,310.67,OK
+16,R104,8,1/30/2025,2.2,,Pizza,No,75.0,New Cairo,No,2189.5,OK
