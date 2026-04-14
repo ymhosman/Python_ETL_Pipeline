@@ -6,7 +6,7 @@ def transform(orders_raw: pd.DataFrame, ref_raw: pd.DataFrame):
     # Clean null customer ratings to default to 2.5 (half of max 5)
     orders_raw['customer_rating'] = orders_raw['customer_rating'].fillna(2.5)
 
-    # inner join with reference table
+    # left join with reference table
     db = pd.merge(orders_raw, ref_raw, on='restaurant_code', how='left')
 
     # Encode own driver
