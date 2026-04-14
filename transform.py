@@ -13,9 +13,9 @@ def transform(orders_raw: pd.DataFrame, ref_raw: pd.DataFrame):
     db["own_driver"] = db["own_driver"].map({"No": 0, "Yes": 1})
 
     
-    db["own_driver"] = db["own_driver"].fillna(0)
-    db["delivery_fee"] = db["delivery_fee"].fillna(40)
-    db["discount_applied"] = db["discount_applied"].fillna(0)
+    db["own_driver"] = db["own_driver"].fillna(1)
+    db["delivery_fee"] = db["delivery_fee"].fillna(35)
+    #db["discount_applied"] = db["discount_applied"].fillna(0)
     db["adv_delivery_time"] = db["adv_delivery_time"].fillna(40)
 
     # Derive delivered on time field
