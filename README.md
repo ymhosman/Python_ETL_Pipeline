@@ -3,7 +3,7 @@ This project implements an ETL pipeline using Python. Data is extracted from two
 
 ## Architecture Overview
 
-The project consists of 1 main module (`main.py`) and 4 sub-modules: `extract.py`, `transform.py`, `load.py`, and `config.py`. 
+The project consists of 1 main module (`main.py`) and 4 sub-modules: `extract.py`, `transform.py`, `load.py`, and `config.py`. The extract module reads. The transform module has 4 functions; transform cleans the data and handles null values, along with adding soft and hard error flags. The reject function produces two flows, a cleaned output along with a DataFrame of rejected rows along with flags. Aggregate then produces a final insights by aggregating values from the clean flow.
 
 ## Source Description
 ### Source A – Transactions (MySQL)
@@ -14,7 +14,7 @@ The project consists of 1 main module (`main.py`) and 4 sub-modules: `extract.py
 ### Source B – Reference (CSV)
 - **File:** `restaurant_reference.csv`
 - **Fields:** `restaurant_code`, `restaurant_name`, `category`, `chain`, `own_driver`, `delivery_fee`, `adv_delivery_time`, `location`
-- **Characteristics:** Static lookup table with 12 products.  present to simulate missing references.
+- **Characteristics:** Static lookup table with 6 restaurants. Restaurants R106 and R107 are not present in to simulate missing references.
 ## Quality Rules
 
 #### Hard Errors (rows go to `reject_flow`)
@@ -29,7 +29,7 @@ The project consists of 1 main module (`main.py`) and 4 sub-modules: `extract.py
 | Rule | Condition | Message added to `data_quality_flag` |
 |------|-----------|--------------------------------------|
 | WRN‑01 | `order_price > 3000` | `"High price alert; "` |
-| WRN‑02 | `category == null` or `"Unknown"` | `"Missing restuarant category"` |
+| WRN‑02 | `category == null` or `"Unknown"` | `"Missing restuarant reference"` |
 
 ## Aggregation
 
@@ -46,6 +46,8 @@ The `clean_flow` is aggregated by `restaurant_code` to produce a summary dataset
 The aggregated output is written to a CSV file (specified by `OUTPUT_AGG`).
 
 ## Run Instructions
+
+run command  `main.py` in terminal from script directory
 
 ## Assumptions and trade-offs
 
