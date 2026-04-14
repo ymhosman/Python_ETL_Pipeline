@@ -46,8 +46,21 @@ The `clean_flow` is aggregated by `restaurant_code` to produce a summary dataset
 The aggregated output is written to a CSV file (specified by `OUTPUT_AGG`).
 
 ## Run Instructions
+1. Clone the repo
+`git clone <your-repo-url>`
+`cd <your-repo-folder>`
 
-run command  `main.py` in terminal from script directory
+2. Create and activate virtual environment
+`python -m venv venv`
+`venv\Scripts\activate`
+
+3. Install dependencies
+`pip install -r requirements.txt`
+
+4. Configure input and output paths in `config.py`
+
+5. Run the pipeline
+`python main.py`
 
 ## Assumptions and trade-offs
 
