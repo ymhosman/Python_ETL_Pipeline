@@ -68,6 +68,7 @@ def aggregate(db: pd.DataFrame):
         'delivered_on_time': lambda x: (x == 'Yes').sum()
         })
     aggregated_data['delivered_on_time'] = aggregated_data['delivered_on_time']/aggregated_data['sale_id'] * 100
-    
+
+    aggregated_data.columns = ['restaurant_code', 'total_revenue', 'average_rating', 'total_quantity', 'total_orders', 'percent_on_time']
 
     return aggregated_data

@@ -1,4 +1,4 @@
-restaurant_code,total_price,customer_rating,quantity,sale_id,delivered_on_time
+restaurant_code,total_revenue,average_rating,total_quantity,total_orders,percent_on_time
 R100,280.67,2.4,3,1,0.0
 R101,3289.07,2.9333333333333336,21,3,66.66666666666666
 R102,6794.12,4.0,19,2,0.0
