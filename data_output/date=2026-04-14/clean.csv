@@ -1,11 +1,11 @@
 sale_id,restaurant_code,quantity,sale_date,customer_rating,restaurant_name,category,chain,delivery_fee,location,delivered_on_time,total_price,data_quality_flag
-1,R106,2,1/15/2025,2.5,,Unknown,,40.0,,Yes,350.45,MISSING RESTAURANT REFERENCE
+1,R106,2,1/15/2025,2.5,,Unknown,,35.0,,Yes,385.45,MISSING RESTAURANT REFERENCE
 2,R100,3,1/16/2025,2.4,,Burgers,No,50.0,Maadi,No,280.67,OK
 3,R102,12,1/17/2025,4.2,,Shawerma,Yes,40.0,New Cairo,No,5320.67,HIGH PRICE ALERT
 4,R103,5,1/18/2025,3.7,,Burgers,Yes,30.0,New Cairo,Yes,310.67,OK
 5,R104,7,1/19/2025,2.6,,Pizza,No,75.0,New Cairo,Yes,420.66,OK
 7,R103,5,1/21/2025,2.9,,Burgers,Yes,30.0,New Cairo,Yes,3110.67,HIGH PRICE ALERT
-8,R107,5,1/22/2025,4.6,,Unknown,,40.0,,No,1750.52,MISSING RESTAURANT REFERENCE
+8,R107,5,1/22/2025,4.6,,Unknown,,35.0,,No,1785.52,MISSING RESTAURANT REFERENCE
 9,R102,7,1/23/2025,3.8,,Shawerma,Yes,40.0,New Cairo,No,1473.45,OK
 10,R101,8,1/24/2025,2.7,,Grills,No,25.0,New Cairo,No,899.63,OK
 12,R101,6,1/26/2025,2.5,,Grills,No,25.0,New Cairo,Yes,785.99,OK
