@@ -3,7 +3,7 @@ This project implements an ETL pipeline using Python. Data is extracted from two
 
 ## Architecture Overview
 
-The project consists of 1 main module (`main.py`) and 4 sub-modules: `extract.py`, `transform.py`, `load.py`, and `config.py`. The extract module reads. The transform module has 4 functions; transform cleans the data and handles null values, along with adding soft and hard error flags. The reject function produces two flows, a cleaned output along with a DataFrame of rejected rows along with flags. Aggregate then produces a final insights by aggregating values from the clean flow.
+The project consists of 1 main module (`main.py`) and 4 sub-modules: `extract.py`, `transform.py`, `load.py`, and `config.py`. The extract module imports the data from external sources defined in the config module. The transform module has 4 functions; transform cleans the data and handles null values, along with adding soft and hard error flags. It also combines the data using a left join with the restuarant reference, in order to retain order data that is missing its corresponding restaurant reference. The reject function produces two flows, a cleaned output along with a DataFrame of rejected rows along with flags. Aggregate then produces a final insights by aggregating values from the clean flow. Finally, the load module writes the output to a CSV file path again defined in `config.py`.
 
 ## Source Description
 ### Source A – Transactions (MySQL)
@@ -63,5 +63,6 @@ The aggregated output is written to a CSV file (specified by `OUTPUT_AGG`).
 `python main.py`
 
 ## Assumptions and trade-offs
-
+The project was simplified for clarity and speed: assuming small, clean CSV inputs, stable schemas, single-machine execution, and minimal failure handling—trading scalability, robustness, and observability for ease of development. In production, you’d harden with schema validation and data contracts (to catch drift), Parquet + partitioning (for performance and cost), orchestration with retries and alerts (Airflow), scalable compute (Polars/Spark).
 ## Scale question
+At 10M rows daily, you’d shift from in-memory pandas to chunked or distributed processing (Polars/Dask), replace CSV with Parquet, and use partitioned storage. The data quality handling currently employs row-wise logic which is expensive, however replacing it with vectorized logic can alone provide a 10-100x speedup. Finally, the aggregation step could prove a bottleneck at large database sizez, therefore incremental aggregation is recommended to be implemented. Overall, the pipeline structure stays the same, but execution becomes scalable, fault-tolerant, and storage-efficient.
