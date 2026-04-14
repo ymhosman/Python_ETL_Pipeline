@@ -54,7 +54,7 @@ def reject(db: pd.DataFrame):
     db_rejected = db[db['reject_reason'] != '']
     db_clean = db[db['reject_reason'] == '']
 
-    #db_rejected = db_rejected.drop(columns=['time_to_deliver', 'discount_applied', 'own_driver', 'adv_delivery_time'])
+    db_rejected = db_rejected.drop(columns=['time_to_deliver', 'discount_applied', 'own_driver', 'adv_delivery_time'])
     db_clean = db_clean.drop(columns=['order_price', 'time_to_deliver', 'discount_applied', 'own_driver', 'adv_delivery_time', 'reject_reason'])
     return db_clean, db_rejected
 
