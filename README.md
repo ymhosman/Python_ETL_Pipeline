@@ -9,7 +9,7 @@ The project consists of 1 main module (`main.py`) and 4 sub-modules: `extract.py
 ### Source A – Transactions (MySQL)
 - **Table:** `source_sales`
 - **Fields:** `sale_id`, `restaurant_code`, `quantity`, `order_price`, `sale_date`, `customer_rating`, `discount_applied`, `time_to_deliver`
-- **Characteristics:** 50 rows of order data, includes intentional errors (negative/zero quantities, negative prices, high prices) to test quality rules.
+- **Characteristics:** 32 rows of order data, includes intentional errors (negative/zero quantities, negative prices, high prices) to test quality rules.
 
 ### Source B – Reference (CSV)
 - **File:** `restaurant_reference.csv`
